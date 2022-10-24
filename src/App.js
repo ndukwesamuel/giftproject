@@ -1,19 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
+import Error from "./Error";
+import Page3 from "./Page3";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <BrowserRouter className="App">
       <Routes>
-        <Route path="/" element={<Page1 />} />
+        <Route exact path="/" element={<Page1 />} />
 
         <Route path="/page2/*" element={<Page2 />} />
+        <Route path="/page3/*" element={<Page3 />} />
+        <Route element={<Error />} />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 }
 

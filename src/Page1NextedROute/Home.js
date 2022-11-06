@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Home() {
   let navigate = useNavigate();
-  let api_url = "https://api.github.com/users/ndukwesamuel";
+  let api_url = "https://api.github.com/users/Gift1111";
 
   const [userdata, setUserdata] = useState(null);
 

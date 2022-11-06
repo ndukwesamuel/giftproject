@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 function UserRepo() {
   let navigate = useNavigate();
-  let api_url = "https://api.github.com/users/ndukwesamuel/repos";
+  let api_url = "https://api.github.com/users/Gift1111/repos";
 
   const [userdata, setUserdata] = useState(null);
 

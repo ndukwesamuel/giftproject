@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter className="App">
       <Routes>
-        <Route exact path="/" element={<RoutePAge1 />} />
+        <Route exact path="/*" element={<RoutePAge1 />} />
 
         <Route path="*" element={<Error />} />
 

@@ -12,17 +12,12 @@ function Home() {
   };
 
   async function getapi(url) {
-    // Storing response
     const response = await fetch(url);
 
-    // Storing data in form of JSON
     var data = await response.json();
-    // console.log(data);
-    // console.log(test);
 
     setUserdata(data);
   }
-  // Calling that async function
 
   useEffect(() => {
     getapi(api_url);

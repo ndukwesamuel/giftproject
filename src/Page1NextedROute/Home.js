@@ -35,6 +35,12 @@ function Home() {
 
           <h1>this page is to design the user landing page</h1>
 
+          <p> this page show that the profile is for Gift</p>
+
+          <Link to="https://api.github.com/users/Gift1111">
+            this will give you more detail about the data you can pull from this
+            api
+          </Link>
           <div onClick={HandleCLi}>click me</div>
 
           <Link to="/repo"> click me</Link>

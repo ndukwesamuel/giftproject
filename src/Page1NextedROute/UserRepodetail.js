@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import UserMainDetail from "./UserMainDetail";
 
 function UserRepodetail() {
   let navigate = useNavigate();
   let { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   let api_url = "https://api.github.com/users/ndukwesamuel/repos";
 
@@ -20,13 +21,42 @@ function UserRepodetail() {
     getapi(api_url);
 
     return () => {};
-  }, [api_url]);
+  }, []);
 
-  let MMM = userdata;
+  const people = [
+    {
+      name: "James",
+      age: 31,
+    },
+    {
+      name: "John",
+      age: 45,
+    },
+    {
+      name: "Paul",
+      age: 65,
+    },
+    {
+      name: "Ringo",
+      age: 49,
+    },
+    {
+      name: "George",
+      age: 34,
+    },
+  ];
 
-  console.log(MMM);
-
-  return <div>kaka</div>;
+  return (
+    <div>
+      {userdata ? (
+        <>
+          <UserMainDetail data={userdata} dataid={id} />
+        </>
+      ) : (
+        "loading"
+      )}
+    </div>
+  );
 }
 
 export default UserRepodetail;

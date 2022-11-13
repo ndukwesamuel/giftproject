@@ -12,11 +12,8 @@ function App() {
     <BrowserRouter className="App">
       <Routes>
         <Route exact path="/*" element={<RoutePAge1 />} />
-        <Route path="*" element={<Error />} />
 
-        <Route path="/page2/*" element={<Page2 />} />
-        <Route path="/page3/*" element={<Page3 />} />
-        <Route element={<Error />} />
+        <Route component={Error} />
       </Routes>
     </BrowserRouter>
   );

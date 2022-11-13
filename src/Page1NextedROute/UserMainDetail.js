@@ -11,10 +11,25 @@ function UserMainDetail({ data, dataid }) {
 
   console.log(finalData);
 
+  const {
+    name,
+    allow_forking,
+    archive_url,
+    branches_url,
+    blobs_url,
+    archived,
+    assignees_url,
+  } = finalData;
+
   return (
     <div>
       UserMainDetail this is for the single repo
-      <h1>{finalData.name}</h1>
+      <h1>{name}</h1>
+      <p>{allow_forking}</p>
+      <p>{archived}</p>
+      <p>{assignees_url}</p>
+      <p>{blobs_url}</p>
+      <p>{branches_url}</p>
     </div>
   );
 }

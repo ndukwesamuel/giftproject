@@ -16,7 +16,12 @@ function UserRepo() {
     const response = await fetch(url);
     // Storing data in form of JSON
     var data = await response.json();
-    setUserdata(data);
+
+    const sortedData = [...data].sort((a, b) => (a.name > b.name ? 1 : -1));
+
+    console.log(sortedData);
+
+    setUserdata(sortedData);
   }
   // Calling that async function
 
@@ -34,12 +39,12 @@ function UserRepo() {
             const { avatar_url, id, name, owner, description } = item;
 
             return (
-              <div className="debug repoWrapper_main">
+              <div className="debug repoWrapper_main" key={id}>
                 name{id}
                 <h3>Project Title - {name}</h3>
                 <h4>Project Description - {description}</h4>
                 <h4> Project Creattor - {owner.login}</h4>
-                <Link to={`/repo/${id}`}> view more about the project </Link>
+                <Link to={`/repo/${name}`}> view more about the project </Link>
               </div>
             );
           })}

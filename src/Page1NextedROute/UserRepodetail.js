@@ -6,11 +6,8 @@ function UserRepodetail() {
   let navigate = useNavigate();
   let { id } = useParams();
   // console.log(id);
-
-  let api_url = "https://api.github.com/users/ndukwesamuel/repos";
-
+  let api_url = "https://api.github.com/users/Gift1111/repos";
   const [userdata, setUserdata] = useState(null);
-
   async function getapi(url) {
     const response = await fetch(url);
     var data = await response.json();
@@ -23,28 +20,19 @@ function UserRepodetail() {
     return () => {};
   }, []);
 
-  const people = [
-    {
-      name: "James",
-      age: 31,
-    },
-    {
-      name: "John",
-      age: 45,
-    },
-    {
-      name: "Paul",
-      age: 65,
-    },
-    {
-      name: "Ringo",
-      age: 49,
-    },
-    {
-      name: "George",
-      age: 34,
-    },
-  ];
+  const GetSpecificData = ({ data, dataid }) => {
+    console.log(dataid);
+    console.log(data);
+
+    if (data) {
+      let Newdata = data.filter((todo) => todo.name == dataid);
+
+      console.log(Newdata);
+    }
+
+    // let finalData = Newdata[0];
+    return <>sam</>;
+  };
 
   return (
     <div>
